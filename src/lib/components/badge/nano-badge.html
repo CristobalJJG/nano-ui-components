@@ -1,0 +1,21 @@
+<span
+  class="badge"
+  [class.badge-neutral]="variant === 'neutral'"
+  [class.badge-primary]="variant === 'primary'"
+  [class.badge-success]="variant === 'success'"
+  [class.badge-warning]="variant === 'warning'"
+  [class.badge-danger]="variant === 'danger'"
+  [class.badge-info]="variant === 'info'"
+  [class.badge-sm]="size === 'sm'"
+  [class.badge-md]="size === 'md'"
+  [class.badge-pill]="pill"
+>
+  @if (dot) {
+    <span class="badge-dot" aria-hidden="true"></span>
+  }
+  @if (label) {
+    {{ label }}
+  } @else {
+    <ng-content />
+  }
+</span>

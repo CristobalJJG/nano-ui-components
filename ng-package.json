@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/nano-ui-components",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "assets": [
+    {
+      "glob": "themes.css",
+      "input": "src",
+      "output": "."
+    }
+  ]
+}

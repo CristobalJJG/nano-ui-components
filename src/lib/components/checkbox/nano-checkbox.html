@@ -1,0 +1,17 @@
+<label class="checkbox-row" [class.checkbox-disabled]="disabled" [for]="id">
+  <input
+    class="checkbox-control"
+    [id]="id"
+    type="checkbox"
+    [checked]="checked"
+    [disabled]="disabled"
+    [indeterminate]="indeterminate"
+    (change)="onChange($event)"
+  />
+  <span class="checkbox-copy">
+    <span class="checkbox-label">{{ label }}</span>
+    @if (description) {
+      <span class="checkbox-description">{{ description }}</span>
+    }
+  </span>
+</label>

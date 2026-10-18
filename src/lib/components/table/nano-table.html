@@ -1,0 +1,60 @@
+<div class="nano-table-container">
+  <table class="nano-table">
+    <thead>
+      <tr>
+        @for (col of columns; track col.key) {
+        <th (click)="sortBy(col.key)" (keydown.enter)="sortBy(col.key)" class="nano-table-header">
+          <div class="header-content">
+            <span class="header-title">{{ col.header }}</span>
+            @if (col.sort === 'asc') {
+            <span class="sort-icon">▲</span>
+            }
+            @if (col.sort === 'desc') {
+            <span class="sort-icon">▼</span>
+            }
+          </div>
+          @if (col.filter !== undefined) {
+          <input 
+            type="text" 
+            [placeholder]="'Filter...'" 
+            (input)="onFilterChange(col.key, $any($event.target).value)"
+            class="header-filter"
+          />
+          }
+        </th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of filteredData; track $index) {
+      <tr (click)="onRowClick(row)" (keydown.enter)="onRowClick(row)" tabindex="0" class="nano-table-row">
+        @for (col of columns; track col.key) {
+        <td class="nano-table-cell">
+          @if (col.render) {
+            @if (isHTMLElement(col.render(row[col.key]))) {
+              <ng-container *ngTemplateOutlet="htmlContent"></ng-container>
+            } @else {
+              <ng-template #textContent>
+                {{ row[col.key] }}
+              </ng-template>
+            }
+          } @else {
+            {{ row[col.key] }}
+          }
+          
+          <ng-template #htmlContent>
+             <ng-container *ngTemplateOutlet="renderTemplate"></ng-container>
+          </ng-template>
+        </td>
+        }
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<ng-template #renderTemplate let-value="value">
+  <!-- This is a simplified placeholder. In a real scenario, 
+       complex rendering would be handled by a more robust logic. -->
+  <span>{{ value }}</span>
+</ng-template>

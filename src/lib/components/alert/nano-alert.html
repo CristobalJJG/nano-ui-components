@@ -1,0 +1,26 @@
+<section
+  class="alert"
+  [class.alert-info]="variant === 'info'"
+  [class.alert-success]="variant === 'success'"
+  [class.alert-warning]="variant === 'warning'"
+  [class.alert-danger]="variant === 'danger'"
+  [attr.role]="variant === 'danger' ? 'alert' : 'status'"
+>
+  <span class="alert-mark" aria-hidden="true">
+    @switch (variant) {
+      @case ('success') { ✓ }
+      @case ('warning') { ! }
+      @case ('danger') { × }
+      @default { i }
+    }
+  </span>
+  <span class="alert-copy">
+    @if (title) {
+      <strong class="alert-title">{{ title }}</strong>
+    }
+    <span class="alert-message">{{ message }}<ng-content /></span>
+  </span>
+  @if (dismissible) {
+    <button class="alert-dismiss" type="button" aria-label="Cerrar aviso" (click)="dismissed.emit()">×</button>
+  }
+</section>

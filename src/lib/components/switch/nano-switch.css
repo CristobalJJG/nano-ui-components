@@ -1,0 +1,88 @@
+:host {
+  display: inline-block;
+  min-width: 0;
+}
+
+.switch-row {
+  display: flex;
+  min-width: 220px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.switch-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.switch-label {
+  color: var(--ui-text, #f8fafc);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.switch-description {
+  max-width: 320px;
+  color: var(--ui-text-muted, #94a3b8);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.switch-track {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  flex: 0 0 auto;
+  border: 1px solid var(--ui-border-strong, #41434c);
+  border-radius: 999px;
+  background: var(--ui-surface-raised, #1a1b20);
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease;
+}
+
+.switch-input {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ui-text-muted, #94a3b8);
+  transition:
+    transform 140ms ease,
+    background-color 140ms ease;
+}
+
+.switch-input:checked + .switch-thumb {
+  transform: translateX(18px);
+  background: #fff;
+}
+
+.switch-track:has(.switch-input:checked) {
+  border-color: var(--ui-primary, #625bf6);
+  background: var(--ui-primary, #625bf6);
+}
+
+.switch-track:has(.switch-input:focus-visible) {
+  outline: 2px solid var(--ui-info, #38bdf8);
+  outline-offset: 3px;
+}
+
+.switch-disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}

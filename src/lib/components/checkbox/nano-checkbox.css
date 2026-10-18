@@ -1,0 +1,48 @@
+:host {
+  display: inline-block;
+}
+
+.checkbox-row {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkbox-control {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  margin: 1px 0 0;
+  accent-color: var(--ui-primary, #625bf6);
+  cursor: inherit;
+}
+
+.checkbox-control:focus-visible {
+  outline: 2px solid var(--ui-info, #38bdf8);
+  outline-offset: 3px;
+}
+
+.checkbox-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.checkbox-label {
+  color: var(--ui-text, #f8fafc);
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.4;
+}
+
+.checkbox-description {
+  max-width: 360px;
+  color: var(--ui-text-muted, #94a3b8);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.checkbox-disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}

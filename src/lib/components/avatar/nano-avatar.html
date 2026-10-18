@@ -1,0 +1,18 @@
+<span
+  class="avatar"
+  [class.avatar-sm]="size === 'sm'"
+  [class.avatar-md]="size === 'md'"
+  [class.avatar-lg]="size === 'lg'"
+  [class.avatar-xl]="size === 'xl'"
+  [attr.aria-label]="name"
+  role="img"
+>
+  @if (src && !imageFailed) {
+    <img [src]="src" [alt]="name" (error)="onImageError()" />
+  } @else {
+    <span aria-hidden="true">{{ initials || '?' }}</span>
+  }
+  @if (status) {
+    <span class="avatar-status" [class.status-online]="status === 'online'" [class.status-away]="status === 'away'" [class.status-offline]="status === 'offline'" aria-hidden="true"></span>
+  }
+</span>

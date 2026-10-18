@@ -1,0 +1,114 @@
+:host {
+  display: inline-flex;
+}
+
+:host(.host-full-width) {
+  display: flex;
+  width: 100%;
+}
+
+.button {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-sm, 6px);
+  cursor: pointer;
+  font-weight: 650;
+  line-height: 1;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease,
+    box-shadow 140ms ease,
+    transform 140ms ease;
+  white-space: nowrap;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--ui-info, #38bdf8);
+  outline-offset: 3px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.button-sm {
+  min-height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.button-md {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 13px;
+}
+
+.button-lg {
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.button-full {
+  width: 100%;
+}
+
+.button-primary {
+  color: var(--ui-primary-contrast, #fff);
+  background: var(--ui-primary, #625bf6);
+  box-shadow: 0 5px 16px #625bf633;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--ui-primary-hover, #7771ff);
+}
+
+.button-secondary {
+  color: var(--ui-text, #f8fafc);
+  border-color: var(--ui-border, #2c2e35);
+  background: var(--ui-surface-raised, #1a1b20);
+}
+
+.button-secondary:hover:not(:disabled) {
+  background: var(--ui-surface-hover, #22242b);
+}
+
+.button-outline {
+  color: var(--ui-text, #f8fafc);
+  border-color: var(--ui-border-strong, #41434c);
+  background: transparent;
+}
+
+.button-outline:hover:not(:disabled) {
+  border-color: var(--ui-primary, #625bf6);
+  background: #625bf61a;
+}
+
+.button-ghost {
+  color: var(--ui-text-muted, #94a3b8);
+  background: transparent;
+}
+
+.button-ghost:hover:not(:disabled) {
+  color: var(--ui-text, #f8fafc);
+  background: var(--ui-surface-raised, #1a1b20);
+}
+
+.button-danger {
+  color: #fff;
+  background: #e04762;
+}
+
+.button-danger:hover:not(:disabled) {
+  background: #f0526d;
+}

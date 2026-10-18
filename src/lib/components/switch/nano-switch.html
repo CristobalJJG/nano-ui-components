@@ -1,0 +1,20 @@
+<label class="switch-row" [class.switch-disabled]="disabled" [for]="id">
+  <span class="switch-copy">
+    <span class="switch-label">{{ label }}</span>
+    @if (description) {
+      <span class="switch-description">{{ description }}</span>
+    }
+  </span>
+  <span class="switch-track">
+    <input
+      class="switch-input"
+      [id]="id"
+      type="checkbox"
+      role="switch"
+      [checked]="checked"
+      [disabled]="disabled"
+      (change)="onChange($event)"
+    />
+    <span class="switch-thumb" aria-hidden="true"></span>
+  </span>
+</label>

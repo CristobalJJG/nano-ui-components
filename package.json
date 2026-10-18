@@ -1,0 +1,15 @@
+{
+  "name": "@nanojjg/nano-ui-components",
+  "version": "0.2.1",
+  "peerDependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/core": "^22.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "exports": {
+    "./themes.css": "./themes.css"
+  },
+  "sideEffects": false
+}

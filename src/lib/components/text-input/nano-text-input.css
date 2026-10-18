@@ -1,0 +1,67 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field-label {
+  color: var(--ui-text, #f8fafc);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.required-mark {
+  margin-left: 3px;
+  color: var(--ui-danger, #fb7185);
+}
+
+.control {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  color: var(--ui-text, #f8fafc);
+  border: 1px solid var(--ui-border, #2c2e35);
+  border-radius: var(--ui-radius-sm, 6px);
+  outline: none;
+  background: var(--ui-canvas, #0a0a0c);
+  font-size: 13px;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.control::placeholder {
+  color: var(--ui-text-subtle, #64748b);
+}
+
+.control:hover:not(:disabled) {
+  border-color: var(--ui-border-strong, #41434c);
+}
+
+.control:focus-visible {
+  border-color: var(--ui-primary, #625bf6);
+  box-shadow: 0 0 0 3px #625bf633;
+}
+
+.control:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.control[aria-invalid="true"] {
+  border-color: var(--ui-danger, #fb7185);
+}
+
+.field-message {
+  color: var(--ui-text-muted, #94a3b8);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.field-error {
+  color: var(--ui-danger, #fb7185);
+}

@@ -1,0 +1,28 @@
+<div class="field">
+  @if (label) {
+    <label class="field-label" [for]="id">
+      {{ label }}
+      @if (required) {
+        <span class="required-mark" aria-hidden="true">*</span>
+      }
+    </label>
+  }
+  <textarea
+    class="control"
+    [id]="id"
+    [value]="value"
+    [placeholder]="placeholder"
+    [rows]="rows"
+    [disabled]="disabled"
+    [required]="required"
+    [style.resize]="resize"
+    [attr.aria-invalid]="error ? 'true' : null"
+    [attr.aria-describedby]="error ? id + '-error' : hint ? id + '-hint' : null"
+    (input)="onInput($event)"
+  ></textarea>
+  @if (error) {
+    <span class="field-message field-error" [id]="id + '-error'" role="alert">{{ error }}</span>
+  } @else if (hint) {
+    <span class="field-message" [id]="id + '-hint'">{{ hint }}</span>
+  }
+</div>

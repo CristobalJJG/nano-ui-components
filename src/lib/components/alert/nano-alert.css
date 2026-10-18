@@ -1,0 +1,88 @@
+:host {
+  display: block;
+}
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-md, 10px);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.alert-info {
+  color: var(--ui-info-text, #bae6fd);
+  border-color: var(--ui-info-border, #38bdf844);
+  background: var(--ui-info-bg, #38bdf812);
+}
+
+.alert-success {
+  color: var(--ui-success-text, #a7f3d0);
+  border-color: var(--ui-success-border, #34d39944);
+  background: var(--ui-success-bg, #34d39912);
+}
+
+.alert-warning {
+  color: var(--ui-warning-text, #fde68a);
+  border-color: var(--ui-warning-border, #fbbf2444);
+  background: var(--ui-warning-bg, #fbbf2412);
+}
+
+.alert-danger {
+  color: var(--ui-danger-text, #fecdd3);
+  border-color: var(--ui-danger-border, #fb718544);
+  background: var(--ui-danger-bg, #fb718512);
+}
+
+.alert-mark {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.alert-copy {
+  display: grid;
+  flex: 1;
+  gap: 3px;
+}
+
+.alert-title {
+  font-size: 12px;
+}
+
+.alert-message {
+  opacity: 0.9;
+}
+
+.alert-dismiss {
+  width: 23px;
+  height: 23px;
+  flex: 0 0 auto;
+  margin: -3px -4px 0 0;
+  color: currentColor;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.alert-dismiss:hover {
+  background: #ffffff14;
+}
+
+.alert-dismiss:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}

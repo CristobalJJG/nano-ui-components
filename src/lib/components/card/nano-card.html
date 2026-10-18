@@ -1,0 +1,14 @@
+<article class="card" [class.card-sm]="padding === 'sm'" [class.card-md]="padding === 'md'" [class.card-lg]="padding === 'lg'" [class.card-interactive]="interactive">
+  @if (heading || description) {
+    <header class="card-header">
+      @if (heading) {
+        <h3 class="card-heading">{{ heading }}</h3>
+      }
+      @if (description) {
+        <p class="card-description">{{ description }}</p>
+      }
+    </header>
+  }
+  <div class="card-content"><ng-content /></div>
+  <footer class="card-footer"><ng-content select="[uiCardFooter]" /></footer>
+</article>
