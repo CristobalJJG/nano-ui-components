@@ -1,6 +1,27 @@
 {
   "name": "@nanojjg/nano-ui-components",
-  "version": "0.2.4",
+  "version": "0.2.5",
+  "description": "Standalone Angular UI components published as @nanojjg/nano-ui-components.",
+  "keywords": [
+    "angular",
+    "angular-library",
+    "ui",
+    "components",
+    "design-system"
+  ],
+  "license": "MIT",
+  "author": "CristobalJJG",
+  "homepage": "https://github.com/CristobalJJG/nano-ui-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CristobalJJG/nano-ui-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CristobalJJG/nano-ui-components/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@angular/common": "^22.2.0",
     "@angular/core": "^22.2.0"
@@ -9,7 +30,18 @@
     "tslib": "^2.3.0"
   },
   "exports": {
-    "./themes.css": "./src/themes.css"
+    "./themes.css": {
+      "default": "./themes.css"
+    }
   },
-  "sideEffects": false
+  "sideEffects": ["**/*.css"],
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json -c tsconfig.lib.prod.json",
+    "build:watch": "ng-packagr -p ng-package.json -c tsconfig.lib.prod.json --watch"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^22.2.0",
+    "ng-packagr": "^22.2.0",
+    "typescript": "~6.0.2"
+  }
 }
