@@ -1,10 +1,14 @@
 /*
  * Public API for Nano UI Components
  */
-
-export * from './components/nano-badge.component';
-export * from './components/nano-button.component';
-export * from './components/nano-card.component';
-export * from './components/nano-checkbox.component';
-export * from './components/nano-select.component';
-export * from './components/nano-table.component';
+export * from './components/alert/nano-alert'
+export * from './components/avatar/nano-avatar'
+export * from './components/badge/nano-badge'
+export * from './components/button/nano-button'
+export * from './components/card/nano-card'
+export * from './components/checkbox/nano-checkbox'
+export * from './components/select/nano-select'
+export * from './components/switch/nano-switch'
+export * from './components/table/nano-table'
+export * from './components/text-input/nano-text-input'
+export * from './components/textarea/nano-textarea'
